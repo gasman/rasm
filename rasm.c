@@ -705,7 +705,7 @@ struct s_rasm_thread {
 *********************************************************/
 /* extension 4Mo = 256 slots + 4 slots 64K de RAM par d�faut => 260 */
 
-#define BANK_MAX_NUMBER 260
+#define BANK_MAX_NUMBER 8
 
 struct s_snapshot_symbol {
 	unsigned char size;
