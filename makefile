@@ -1,8 +1,8 @@
-CC=cc
-EXEC=rasm.exe
+CC=emcc
+EXEC=rasm.js
 
-CFLAGS=-lm -lrt -march=native -o $(EXEC)
-CFLAGS_OPT = $(CFLAGS) -O2
+CFLAGS=-lm -o $(EXEC)
+CFLAGS_OPT = $(CFLAGS) -O2 -sEXPORTED_FUNCTIONS=_RasmAssembleInfo,_RasmFreeInfoStruct,_malloc,_free -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,getValue,UTF8ToString -sASSERTIONS -sINITIAL_MEMORY=33554432
 CFLAGS_DBG = $(CFLAGS) -g -pthread -lefence
 CFLAGS_3RD = $(CFLAGS) -g -pthread -DNO_3RD_PARTIES
 
